@@ -1,0 +1,35 @@
+git commit - to make a commit
+git branch - to make a new branch
+git checkout *** - switch to branch ***
+git checkout -b *** - create a new branch and switch to
+git merge toThis - merge the current branch to toThis branch
+git rebase toThis - rebase current branch to toThis branch
+
+HEAD is the symbolic name for the currently checked out commit -
+- it's essentially what commit you're working on top of.
+
+git checkout toThis - detaching HEAD to toThis
+
+Caret (^) operator telling Git to find the parent of the specified commit.
+The tilde operator "~" takes in a trailing number 
+that specifies the number of parents you would like to ascend. Let's see it in action.
+
+You can directly reassign a branch to a commit with the -f option. So something like:
+
+git branch -f main HEAD~3
+
+moves (by force) the main branch to three parents behind HEAD.
+
+git reset HEAD~*number* - reverts changes by moving a branch reference backwards in time to an older commit;
+
+git revert HEAD - While resetting works great for local branches on your own machine,
+ its method of "rewriting history" doesn't work for remote branches that others are using.
+In order to reverse changes and share those reversed changes with others, we need to use git revert.
+
+git cherry-pick <Commit1> <Commit2> <...> ...
+
+
+
+
+
+
